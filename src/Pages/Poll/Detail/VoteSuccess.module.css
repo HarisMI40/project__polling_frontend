@@ -1,0 +1,26 @@
+.container {
+  border: 1px solid #4a7dd3;
+  border-radius: 5px;
+  padding: 32px;
+}
+
+.img_success {
+  width: 100%;
+}
+
+.container_button {
+  display: flex;
+  justify-content: space-around;
+  /* justify-content: center; */
+}
+
+.container_button a {
+  border-radius: 0px !important;
+  margin: 0 10px;
+}
+
+@media (min-width: 1200px) {
+  .img_success {
+    width: 50%;
+  }
+}

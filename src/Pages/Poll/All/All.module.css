@@ -1,0 +1,83 @@
+.container {
+  width: 80%;
+}
+.text_title {
+  text-align: left;
+}
+.list__container {
+  border: 1px solid #4a7dd3;
+  border-radius: 5px;
+  padding: 32px;
+  text-align: left;
+}
+
+.list__container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.list__container li {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 23px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.list__title {
+  color: #4a7dd3;
+  margin: 10px 0;
+}
+
+.list__link_title {
+  text-decoration: none;
+}
+
+.list__title:hover {
+  color: #00afaae8;
+}
+.list__container span {
+  color: gray;
+  text-align: left;
+  /* display: block; */
+  font-size: 13px;
+}
+
+.list__container .button__container {
+  text-align: left;
+  margin-top: 8px;
+}
+
+.list__container .button__container .btn {
+  margin: 0;
+  margin-right: 5px;
+}
+
+.btn {
+  color: white;
+  border-radius: 2px;
+  padding: 5px 8px;
+  margin: 5px;
+  text-decoration: none;
+  font-size: 13px;
+  font-family: Arial;
+}
+
+.btn:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.btn_danger {
+  background-color: #db3535;
+  border: 1px solid maroon;
+}
+
+.btn_success {
+  background-color: #228b4e;
+  border: 1px solid #228b4e;
+}
+
+.btn_primary {
+  background-color: #226d8b;
+  border: 1px solid #22658b;
+}

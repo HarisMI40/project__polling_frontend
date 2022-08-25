@@ -1,0 +1,10 @@
+.main {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  padding: 50px 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

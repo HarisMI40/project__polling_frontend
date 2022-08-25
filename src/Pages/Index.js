@@ -1,0 +1,10 @@
+export { default as Login } from "./Auth/Login/Login.js";
+export { default as Home } from "./Home/Home";
+export { default as AllPoll } from "./Poll/All/All";
+export { default as CreatePoll } from "./Poll/Create/Create";
+export { default as CreateContoh } from "./Poll/Create/Create_contoh";
+export { default as DetailPoll } from "./Poll/Detail/Detail";
+export { default as Me } from "./Me/Me";
+export { default as PageNotFound } from "./PageNotFound/PageNotFound";
+export { default as UserAllPoll } from "./User/AllPoll/AllPoll";
+export { default as UserVotePoll } from "./User/Vote/Vote";

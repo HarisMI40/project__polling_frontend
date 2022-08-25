@@ -1,0 +1,144 @@
+body {
+  margin: 0;
+  font-family: roboto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+:root {
+  --bg: #4a7dd3;
+  --bg-accent: #2e69cf;
+  --text-color: #dadce1;
+  --nav-size: 60px;
+  --border: 1px solid #2e69cf;
+  --border-radius: 8px;
+  --speed: 500ms;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--text-color);
+}
+
+.navbar {
+  height: var(--nav-size);
+  background-color: var(--bg);
+  padding: 0 1rem;
+  border-bottom: var(--border);
+}
+
+.logo {
+  font-size: 25px;
+  color: white;
+  letter-spacing: 4px;
+  font-family: roboto;
+}
+
+.logo a {
+  color: white;
+}
+
+/* <ul> */
+.navbar-nav {
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+}
+
+.nav-item {
+  width: calc(var(--nav-size) * 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Icon Button */
+.icon-button {
+  --button-size: calc(var(--nav-size) * 0.5);
+  width: var(--button-size);
+  height: var(--button-size);
+  background-color: var(--bg-accent);
+  /* background-color: #484a4d; */
+  border-radius: 50%;
+  padding: 5px;
+  margin: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: filter 300ms;
+  cursor: pointer;
+}
+
+.icon-button:hover {
+  filter: brightness(1.2);
+}
+
+.icon-button svg {
+  fill: var(--text-color);
+  width: 20px;
+  height: 20px;
+}
+
+.dropdown {
+  position: absolute;
+  top: 58px;
+  width: 226px;
+  transform: translateX(-45%);
+  background-color: var(--bg);
+  border: var(--border);
+  border-radius: var(--border-radius);
+  padding: 5px 0px;
+  overflow: hidden;
+}
+
+.menu-item {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  /* border-radius: var(--border-radius); */
+  /* transition: background var(--speed); */
+  padding: 0.5rem;
+  color: white;
+}
+
+.menu-item .icon-button {
+  margin-right: 0.5rem;
+}
+
+.menu-item .icon-button:hover {
+  filter: none;
+}
+
+/* .menu-item:hover {
+  background-color: var(--bg-accent);
+} */
+.logout {
+  border-top: 1px solid white;
+}
+
+.logout .icon-button {
+  background-color: transparent;
+}
+.logout:hover {
+  background-color: #e37070 !important;
+}
+
+.icon-right {
+  margin-left: auto;
+}
