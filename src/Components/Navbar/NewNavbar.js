@@ -10,6 +10,7 @@ import Navbar, { NavItem, DropDownMenu } from "./Layouts/Navbar";
 
 const NewNavbar = () => {
   const userContext = useContext(User);
+  console.log(userContext.user.username);
   return (
     <Navbar>
       {userContext.user.role == "admin" && (
@@ -19,9 +20,15 @@ const NewNavbar = () => {
         </Link>
       )}
 
-      <NavItem icon={<UserIcon />}>
-        <DropDownMenu userContext={userContext}></DropDownMenu>
-      </NavItem>
+      {userContext.user.username !== undefined ? (
+        <NavItem icon={<UserIcon />}>
+          <DropDownMenu userContext={userContext}></DropDownMenu>
+        </NavItem>
+      ) : (
+        <Link className="btn btn-success" to="/login">
+          Login
+        </Link>
+      )}
     </Navbar>
   );
 };

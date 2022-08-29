@@ -53,8 +53,14 @@ const UserProvider = (props) => {
   };
   const logoutHandler = () => {
     localStorage.removeItem("token");
-    // navigate("/login", { replace: false });
-    window.location.href = "/login";
+    clearData();
+    navigate("/login", { replace: false });
+    // window.location.href = "/login";
+  };
+
+  const clearData = () => {
+    setUser(null);
+    setLogin(false);
   };
 
   const data = {
