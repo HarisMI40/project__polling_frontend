@@ -27,7 +27,7 @@ const Detail = () => {
         process.env.REACT_APP_LINK_API + "poll/" + id
       );
       const dataJson = await response.json();
-
+      console.log(dataJson);
       setData(dataJson.data);
       setProses(false);
     };
