@@ -15,7 +15,7 @@ import {
   CreateContoh,
   UserVotePoll,
 } from "./Pages/Index";
-import User from "./Store/User";
+// import User from "./Store/User";
 
 function App() {
   // const userContext = React.useContext(User);
