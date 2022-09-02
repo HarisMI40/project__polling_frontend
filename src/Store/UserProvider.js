@@ -5,7 +5,7 @@ import axios from "axios";
 
 const UserProvider = (props) => {
   const navigate = useNavigate();
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState({ role: "admin" });
   const token = localStorage.getItem("token");
   const [isLogin, setLogin] = useState(false);
   const [loading, setLoading] = useState(!!token);

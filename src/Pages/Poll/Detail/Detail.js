@@ -11,14 +11,16 @@ const Detail = () => {
   const { id } = useParams();
   const [vote, setVote] = useState("");
   const [data, setData] = useState([]);
+  const [userIp, setUserIp] = useState();
   const [clicked, setClicked] = useState();
   const [status, setStatus] = useState("");
-  const userContext = React.useContext(User);
+  // const userContext = React.useContext(User);
   const [isProses, setProses] = useState(false);
   const [validation, setValidation] = useState([]);
 
   let isCanChoice = true;
-  let user_vote = userContext.user.idUser;
+  let user_vote;
+  // let user_vote = userContext.user.idUser;
 
   useEffect(() => {
     const getDetailData = async () => {
@@ -27,8 +29,8 @@ const Detail = () => {
         process.env.REACT_APP_LINK_API + "poll/" + id
       );
       const dataJson = await response.json();
-      console.log(dataJson);
       setData(dataJson.data);
+      setUserIp(dataJson.user_ip);
       setProses(false);
     };
 
@@ -42,11 +44,12 @@ const Detail = () => {
 
     formData.append("id_poll", id);
     formData.append("id_vote", vote);
-    formData.append("user_vote", user_vote);
+    // formData.append("user_vote", user_vote);
 
     await axios
       .post(process.env.REACT_APP_LINK_API + "vote/store", formData)
       .then((response) => {
+        setValidation([]);
         setStatus("success");
         setProses(false);
       })
@@ -61,7 +64,7 @@ const Detail = () => {
   let isUserVote = false;
   data.choices.map((e) => {
     e.votes.map((f) => {
-      if (f.user_id === user_vote) {
+      if (f.ip_address === userIp) {
         isUserVote = true;
       }
     });

@@ -16,8 +16,7 @@ const Create = () => {
     e.preventDefault();
     setProses(true);
     const formData = new FormData();
-
-    formData.append("user_id", userContext.user.idUser);
+    // formData.append("user_id", userContext.user.idUser);
     formData.append("title", title);
     formData.append("description", description);
     formData.append("deadline", deadline);
@@ -32,7 +31,8 @@ const Create = () => {
     const dataJson = await response.json();
     setProses(false);
     alert("Polling Terbuat");
-    navigate("/poll/" + dataJson.id_polling);
+    console.log(dataJson);
+    // navigate("/poll/" + dataJson.id_polling);
   };
 
   return (

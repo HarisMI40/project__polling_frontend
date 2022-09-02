@@ -36,7 +36,7 @@ const All = () => {
       }
     );
     const data = await response.json();
-    console.log(data);
+    console.log("data = " + data);
     setData(data.data);
   };
 
@@ -47,42 +47,30 @@ const All = () => {
           <Loading />
         ) : (
           <>
-            <div className={style.list__container}>
-              <ul>
-                {data.map((e) => (
-                  <li key={e.id}>
-                    <div>
-                      <Link
-                        to={`/poll/${e.id}`}
-                        className={style.list__link_title}
-                      >
-                        <h2 className={style.list__title}>{e.title}</h2>
-                      </Link>
-                      <span className={style.list__created__by}>
-                        created By : {e.user.username} / deadline : {e.deadline}
-                      </span>
-                    </div>
-
-                    {userContext.user.role === "admin" && (
-                      <div className={style.button__container}>
-                        <button
-                          className={`${style.btn} ${style.btn_danger}`}
-                          onClick={() =>
-                            window.confirm(
-                              "Anda Yakin Akan Menghapus Polling ini ?"
-                            )
-                              ? hapusData(e.id)
-                              : ""
-                          }
+            {data.length === 0 ? (
+              "Tidak ada polling"
+            ) : (
+              <div className={style.list__container}>
+                <ul>
+                  {data.map((e) => (
+                    <li key={e.id}>
+                      <div>
+                        <Link
+                          to={`/poll/${e.id}`}
+                          className={style.list__link_title}
                         >
-                          Delete
-                        </button>
+                          <h2 className={style.list__title}>{e.title}</h2>
+                        </Link>
+                        <span className={style.list__created__by}>
+                          {/* created By : {e.user.username} / deadline :{" "} */}
+                          {e.deadline}
+                        </span>
                       </div>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </>
         )}
       </div>

@@ -20,7 +20,7 @@ const NewNavbar = () => {
         </Link>
       )}
 
-      {userContext.user.username !== undefined ? (
+      {/* {userContext.user.username !== undefined ? (
         <NavItem icon={<UserIcon />}>
           <DropDownMenu userContext={userContext}></DropDownMenu>
         </NavItem>
@@ -28,7 +28,7 @@ const NewNavbar = () => {
         <Link className="btn btn-success" to="/login">
           Login
         </Link>
-      )}
+      )} */}
     </Navbar>
   );
 };
