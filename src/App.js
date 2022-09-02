@@ -30,7 +30,7 @@ function App() {
           element={
             <Layout>
               {" "}
-              <AllPoll />{" "}
+              <CreatePoll />
             </Layout>
           }
         />
