@@ -31,8 +31,7 @@ const Create = () => {
     const dataJson = await response.json();
     setProses(false);
     alert("Polling Terbuat");
-    console.log(dataJson);
-    // navigate("/poll/" + dataJson.id_polling);
+    navigate("/poll/" + dataJson.id_polling);
   };
 
   return (
