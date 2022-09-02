@@ -82,6 +82,11 @@ const Create = () => {
           <label htmlFor="Choices" className="form-label">
             Choices
           </label>
+          <br />
+          <span className="text-danger">
+            * Buat Pilihan dengan klik enter, setiap baris akan membuat satu
+            pilihan
+          </span>
           <textarea
             value={choices}
             onChange={(e) => setChoices(e.target.value)}
