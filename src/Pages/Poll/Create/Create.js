@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import User from "../../../Store/User";
+// import User from "../../../Store/User";
 import style from "./create.module.css";
 import { useNavigate } from "react-router-dom";
 
@@ -10,7 +10,7 @@ const Create = () => {
   const [deadline, setDeadline] = useState("");
   const [isProses, setProses] = useState(false);
   const [description, setDescription] = useState("");
-  const userContext = React.useContext(User);
+  // const userContext = React.useContext(User);
 
   const createHandler = async (e) => {
     e.preventDefault();

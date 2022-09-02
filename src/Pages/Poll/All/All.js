@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import style from "./All.module.css";
 import { Link } from "react-router-dom";
-import User from "./../../../Store/User";
+// import User from "./../../../Store/User";
 import Loading from "../../../Components/UI/Loading/Loading";
 
 const All = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
-  const userContext = React.useContext(User);
+  // const userContext = React.useContext(User);
 
   useEffect(() => {
     // const controller = new AbortController();
