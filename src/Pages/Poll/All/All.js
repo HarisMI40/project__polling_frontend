@@ -53,10 +53,10 @@ const All = () => {
               <div className={style.list__container}>
                 <ul>
                   {data.map((e) => (
-                    <li key={e.id}>
+                    <li key={e.uuid}>
                       <div>
                         <Link
-                          to={`/poll/${e.id}`}
+                          to={`/poll/${e.uuid}`}
                           className={style.list__link_title}
                         >
                           <h2 className={style.list__title}>{e.title}</h2>

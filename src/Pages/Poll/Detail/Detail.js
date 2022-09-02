@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import style from "./Detail.module.css";
-import User from "./../../../Store/User";
 import Loading from "../../../Components/UI/Loading/Loading";
 import BarLoader from "react-spinners/BarLoader";
 import VoteSuccess from "./VoteSuccess";
