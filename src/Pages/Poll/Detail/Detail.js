@@ -48,6 +48,7 @@ const Detail = () => {
     await axios
       .post(process.env.REACT_APP_LINK_API + "vote/store", formData)
       .then((response) => {
+        console.log(response);
         setValidation([]);
         setStatus("success");
         setProses(false);
