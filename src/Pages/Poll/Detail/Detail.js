@@ -73,6 +73,9 @@ const Detail = () => {
     isCanChoice = false;
   }
 
+  console.log("user IP " + userIp);
+  console.log(data);
+
   return (
     <>
       <div className={`${style.container} ${isProses && style.proses}`}>
