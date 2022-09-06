@@ -16,7 +16,7 @@ const Detail = () => {
   // const userContext = React.useContext(User);
   const [isProses, setProses] = useState(false);
   const [validation, setValidation] = useState([]);
-
+  var dataVoteUser = JSON.parse(localStorage.getItem("uuidUser"));
   let isCanChoice = true;
   let user_vote;
   // let user_vote = userContext.user.idUser;
@@ -28,6 +28,7 @@ const Detail = () => {
         process.env.REACT_APP_LINK_API + "poll/" + id
       );
       const dataJson = await response.json();
+      // console.log(dataJson);
       setData(dataJson.data);
       setUserIp(dataJson.user_ip);
       setProses(false);
@@ -48,7 +49,13 @@ const Detail = () => {
     await axios
       .post(process.env.REACT_APP_LINK_API + "vote/store", formData)
       .then((response) => {
-        console.log(response);
+        if (dataVoteUser) {
+          dataVoteUser.push(data.uuid);
+          localStorage.setItem("uuidUser", JSON.stringify(dataVoteUser));
+        } else {
+          localStorage.setItem("uuidUser", JSON.stringify([data.uuid]));
+        }
+
         setValidation([]);
         setStatus("success");
         setProses(false);
@@ -62,20 +69,31 @@ const Detail = () => {
   if (data.choices === undefined) return <Loading />;
 
   let isUserVote = false;
-  data.choices.map((e) => {
-    e.votes.map((f) => {
-      if (f.ip_address === userIp) {
-        isUserVote = true;
-      }
-    });
+  // dataVoteUser.choices.map((e) => {
+  //   e.votes.map((f) => {
+  //     if (f.uuid === dataVoteUser) {
+  //       isUserVote = true;
+  //     }
+  //   });
+  // });
+
+  dataVoteUser.map((dataVote) => {
+    if (dataVote === data.uuid) {
+      isUserVote = true;
+    }
   });
 
   if (isUserVote === true || status === "success") {
     isCanChoice = false;
   }
+  // if (uuid) {
+  //   console.log(uuid);
+  // } else {
+  //   console.log("tidak ada");
+  // }
 
-  console.log("user IP " + userIp);
-  console.log(data);
+  // console.log("user IP " + userIp);
+  // console.log(data);
 
   return (
     <>
