@@ -77,6 +77,7 @@ const Detail = () => {
   //   });
   // });
   if (dataVoteUser) {
+    console.log("data ada");
     dataVoteUser.map((dataVote) => {
       if (dataVote === data.uuid) {
         isUserVote = true;
