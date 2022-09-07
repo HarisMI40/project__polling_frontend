@@ -76,12 +76,13 @@ const Detail = () => {
   //     }
   //   });
   // });
-
-  // dataVoteUser.map((dataVote) => {
-  //   if (dataVote === data.uuid) {
-  //     isUserVote = true;
-  //   }
-  // });
+  if (dataVoteUser) {
+    dataVoteUser.map((dataVote) => {
+      if (dataVote === data.uuid) {
+        isUserVote = true;
+      }
+    });
+  }
 
   if (isUserVote === true || status === "success") {
     isCanChoice = false;
