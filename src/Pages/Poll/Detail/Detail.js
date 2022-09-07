@@ -77,11 +77,11 @@ const Detail = () => {
   //   });
   // });
 
-  dataVoteUser.map((dataVote) => {
-    if (dataVote === data.uuid) {
-      isUserVote = true;
-    }
-  });
+  // dataVoteUser.map((dataVote) => {
+  //   if (dataVote === data.uuid) {
+  //     isUserVote = true;
+  //   }
+  // });
 
   if (isUserVote === true || status === "success") {
     isCanChoice = false;
