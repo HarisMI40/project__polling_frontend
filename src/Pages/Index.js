@@ -1,4 +1,3 @@
-export { default as Login } from "./Auth/Login/Login.js";
 export { default as Home } from "./Home/Home";
 export { default as AllPoll } from "./Poll/All/All";
 export { default as CreatePoll } from "./Poll/Create/Create";
